@@ -1,0 +1,210 @@
+<app-header></app-header>
+
+<section class="container section1">
+    <div class="row">
+    <div class="col-xl-6 col-md-12 text-center">
+        <img src="img1.png" class="img-fluid" style="border-radius: 20px;"/>
+    </div>
+    <div class="col-xl-6 col-md-12 mt-3 p-3">
+        <h1 class="font-weight-bold heading">Your faithful partners Medical Goods</h1>
+        <p class="blockquote paraghraph">Houzez allow you to design unlimited panels and real estate custom forms to capture leads and keep record of all information</p>
+        <ul class="my-4">
+            <li><span class="px-1"><i class="fas fa-check"></i></span> Even the all-powerful Pointing</li>
+            <li><span class="px-1"><i class="fas fa-check"></i></span> Behind the word mountains</li>
+            <li><span class="px-1"><i class="fas fa-check"></i></span> Separated they live in Bookmarksgrove</li>
+        </ul>
+    </div>
+    </div>
+</section>
+
+<section class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="row">
+                <div class="col-sm-6 text-center womenCatalog">
+                    <img src="c2.jpg" class="img-fluid shadow"/>
+                    <div class="overlay">
+                        <div class="text1">
+                            <h5>Get Digital <br>
+                                Thermometer</h5>
+                            <a href="" class="btn-underline">Visit Store</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 text-center coupleCatalog">
+                    <img src="c3.jpg" class="img-fluid shadow"/>
+                    <div class="overlay">
+                        <div class="text1">
+                            <h5>Coronavirus Medical <br>
+                                Supplies</h5>
+                            <a href="" class="btn-underline">Visit Store</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-sm-12 text-center shopNow">
+                    <img src="c4.jpg" class="img-fluid shadow"/>
+                    <div class="overlay">
+                        <div class="text1">
+                            <h3>50% OFF</h3>
+                            <h5>Digital Electronic <br>
+                                Stethoscope</h5>
+                            <button class="btn bg-light-green"> Shop Now </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 text-center menCatalog">
+            <img src="c1.jpg" class="img-fluid shadow"/>
+            <div class="overlay">
+                <div class="text1">
+                    <h3>50% OFF</h3>
+                    <h5>For First Purchase</h5>
+                    <button class="btn bg-light-green"> Shop Now </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container-fluid saleSec mt-5">
+    <div class="container p-5">
+        <div class="row">
+            <div class="col-md-6 p-5">
+                <h5 class="sub-title">Intro Sale Offer!</h5>
+                <h3>Buy all of your medicines at 50% offer.</h3>
+                <p>Get extra cashback discounts and free international shipping.</p>
+                <button class="btn bg-light-green mt-3"> Shop Now </button>
+                <img src="leaf.png" alt="" class="img-leaf" >
+            </div>
+            <div class="col-md-6">
+                <img src="bg.png" alt="" class="img-fluid" style="z-index: 2px;">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container pt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <a routerLink="/product">
+                <div class="box-img">
+                    <img src="banner1.jpg" alt="" class="img-fluid">
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a routerLink="/product">
+                <div class="box-img">
+                    <img src="banner2.jpg" alt="" class="img-fluid">
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a routerLink="/product">
+                <div class="box-img">
+                    <img src="banner3.jpg" alt="" class="img-fluid">
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- <app-all-products></app-all-products> -->
+<section class="container pt-5">
+    <div class="row mt-5"> 
+        <div class="col-md-12">
+            <h2 class="text-center heading">Featured Products</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-sm-6 mt-3 m-auto" *ngFor="let item of PrdbyCat">
+            <div class="product p-2">
+                <div class="imgbox">
+                    <img [src]="item.imgURL" class="img-fluid"/>
+                </div>
+                <div class="details">
+                    <div class="row">
+                        <div>
+                            <h2>{{item.prdName}} <br><span>Men's Designer T-shirts</span></h2>
+                        </div>
+                        <div>
+                            <div class="d-flex justify-content-end price">{{item.price | currency : "EGP" : 'symbol'}}</div>
+                        </div>
+                    </div>
+                    <label>Available Quantity: {{item.quantity}}</label>
+                    <input type="number" class="form-control" [disabled]="item.quantity==0" #neededQuantity min="1" [max]="item.quantity">
+                    <br>
+                    <a class="btn bg-light-green" role="button" [routerLink]="['/productInfo',item.id]">Show details</a>
+                    <button class="btn bg-light-green mt-2"
+                    [disabled]="item.quantity==0">Add To Cart <i class="fa-solid fa-cart-shopping"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center mt-4">
+            <a class="btn bg-light-green" style="width: 150px;" routerLink="/product">view all</a>
+        </div>
+    </div>
+</section>
+
+<section class="container-fluid mt-5 p-5" style="background-color: #F4F8FB;">
+    <div class="container p-3">
+        <div class="row">
+            <div class="col-md-3 col-sm-6 text-center">
+                <img src="credit-card.svg" class="img-fluid" width="100px"/>
+                <label class="titleSer d-block mt-3">Secure checkout</label>
+                <p class="date">Protected by Paypal</p>
+            </div>
+            <div class="col-md-3 col-sm-6 text-center">
+                <img src="trolley.svg" class="img-fluid" width="100px"/>
+                <label class="titleSer d-block mt-3">Free shipping</label>
+                <p class="date">On all orders over $49.00</p>
+            </div>
+            <div class="col-md-3 col-sm-6 text-center">
+                <img src="gift-card.svg" class="img-fluid" width="100px"/>
+                <label class="titleSer d-block mt-3">Offer & gift here</label>
+                <p class="date">On all orders over</p>
+            </div>
+            <div class="col-md-3 col-sm-6 text-center">
+                <img src="money.svg" class="img-fluid" width="100px"/>
+                <label class="titleSer d-block mt-3">15 days returns</label>
+                <p class="date">Moneyback guarantee</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container">
+    <div class="row">
+        <div class="col-md-4 col-sm-6 mt-5">
+            <a routerLink="/product">
+                <div class="box-img">
+                    <img src="banner4.jpg" class="img-fluid">
+                </div>
+            </a>
+            
+        </div>
+        <div class="col-md-4 col-sm-6 mt-5">
+            <a routerLink="/product">
+                <div class="box-img">
+                    <img src="banner5.jpg" class="img-fluid">
+                </div>
+            </a>
+            
+        </div>
+        <div class="col-md-4 col-sm-12 text-center mt-5">
+            <a routerLink="/product">
+                <div class="box-img">
+                    <img src="banner4.jpg" class="img-fluid">
+                </div>
+            </a>
+            
+        </div>
+    </div>
+</section>
+
+<!--   -->

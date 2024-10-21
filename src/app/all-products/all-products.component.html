@@ -1,0 +1,33 @@
+
+<section class="container pt-5">
+    <div class="row mt-5">
+        <div class="col-md-12">
+            <h2 class="text-center heading">Featured Products</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-sm-6 g-4 product" *ngFor="let item of filterPrd">
+            <div class="imgbox">
+                <img [src]="item.imgURL" class="img-fluid"/>
+            </div>
+            <div class="details">
+                <div class="row">
+                    <div>
+                        <h2>{{item.prdName}} <br><span>Men's Designer T-shirts</span></h2>
+                    </div>
+                    <div>
+                        <div class="d-flex justify-content-end price">{{item.price | currency : "EGP" : 'symbol'}}</div>
+                    </div>
+                </div>
+                <label>Available Quantity: {{item.quantity}}</label>
+                <input type="number" class="form-control" [disabled]="item.quantity==0" #neededQuantity min="1" [max]="item.quantity">
+                <!-- Button trigger modal --><br>
+                <!-- <button class="btn bg-light-green" data-bs-toggle="modal" 
+                data-bs-target="#exampleModal">Show details</button> -->
+                <a class="btn bg-light-green" role="button" [routerLink]="['/productInfo',item.id]">Show details</a>
+                <button class="btn bg-light-green mt-2"
+                [disabled]="item.quantity==0">Add To Cart <i class="fa-solid fa-cart-shopping"></i></button>
+            </div>
+        </div>
+    </div>
+</section>

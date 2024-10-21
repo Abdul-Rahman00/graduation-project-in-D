@@ -1,0 +1,30 @@
+{
+    "Categories":[
+        {"id":1,"name":"Cosmetic"},
+        {"id":2,"name":"Stethoscope"},
+        {"id":3,"name":"Drugs"}
+    ],
+    "Products":[
+        {"id":1,"prdName":"Digital Stethoscope","quantity":5,"imgURL":"prd1.png","price":100,"catID":1,"description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam vero enim iusto sunt consequuntur fugit nisi ad adipisci modi eligendi dignissimos minima tempora animi, odit similique? Velit quaerat a unde!"},
+        {"id":2,"prdName":"Antiseptic Spray","quantity":0,"imgURL":"prd2.png","price":100,"catID":1,"description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam vero enim iusto sunt consequuntur fugit nisi ad adipisci modi eligendi dignissimos minima tempora animi, odit similique? Velit quaerat a unde!"},
+        {"id":3,"prdName":"Cosmetic Containers","quantity":10,"imgURL":"prd4.png","price":200,"catID":1,"description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam vero enim iusto sunt consequuntur fugit nisi ad adipisci modi eligendi dignissimos minima tempora animi, odit similique? Velit quaerat a unde!"},
+        {"id":4,"prdName":"Cosmetic Containers","quantity":2,"imgURL":"prd3.png","price":100,"catID":2,"description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam vero enim iusto sunt consequuntur fugit nisi ad adipisci modi eligendi dignissimos minima tempora animi, odit similique? Velit quaerat a unde!"},
+        {"id":5,"prdName":"Blue Hand Gloves","quantity":11,"imgURL":"prd5.png","price":100,"catID":2,"description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam vero enim iusto sunt consequuntur fugit nisi ad adipisci modi eligendi dignissimos minima tempora animi, odit similique? Velit quaerat a unde!"},
+        {"id":6,"prdName":"Thermometer Gun","quantity":1,"imgURL":"prd6.png","price":100,"catID":3,"description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam vero enim iusto sunt consequuntur fugit nisi ad adipisci modi eligendi dignissimos minima tempora animi, odit similique? Velit quaerat a unde!"},
+        {"id":7,"prdName":"Aloevera Food Supliment","quantity":3,"imgURL":"prd7.jpg","price":200,"catID":3,"description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam vero enim iusto sunt consequuntur fugit nisi ad adipisci modi eligendi dignissimos minima tempora animi, odit similique? Velit quaerat a unde!"},
+        {"id":8,"prdName":"First Medicine Aid Kit","quantity":3,"imgURL":"prd8.jpg","price":200,"catID":2,"description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam vero enim iusto sunt consequuntur fugit nisi ad adipisci modi eligendi dignissimos minima tempora animi, odit similique? Velit quaerat a unde!"},
+        {"id":9,"prdName":"First Medicine Aid Kit","quantity":3,"imgURL":"prd9.jpg","price":200,"catID":2,"description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam vero enim iusto sunt consequuntur fugit nisi ad adipisci modi eligendi dignissimos minima tempora animi, odit similique? Velit quaerat a unde!"},
+        {"id":10,"prdName":"First Medicine Aid Kit","quantity":3,"imgURL":"prd10.jpg","price":200,"catID":1,"description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam vero enim iusto sunt consequuntur fugit nisi ad adipisci modi eligendi dignissimos minima tempora animi, odit similique? Velit quaerat a unde!"},
+        {"id":11,"prdName":"First Medicine Aid Kit","quantity":3,"imgURL":"prd11.jpg","price":200,"catID":1,"description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam vero enim iusto sunt consequuntur fugit nisi ad adipisci modi eligendi dignissimos minima tempora animi, odit similique? Velit quaerat a unde!"},
+        {"id":12,"prdName":"First Medicine Aid Kit","quantity":3,"imgURL":"prd12.png","price":200,"catID":1,"description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam vero enim iusto sunt consequuntur fugit nisi ad adipisci modi eligendi dignissimos minima tempora animi, odit similique? Velit quaerat a unde!"},
+        {"id":13,"prdName":"First Medicine Aid Kit","quantity":3,"imgURL":"prd13.png","price":200,"catID":2,"description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam vero enim iusto sunt consequuntur fugit nisi ad adipisci modi eligendi dignissimos minima tempora animi, odit similique? Velit quaerat a unde!"}
+    ],
+    "Users":[
+        {"id":1,"name":"Marwa","password":"258"},
+        {"id":2,"name":"Abdelrahman","password":"258"},
+        {"id":3,"name":"Ahmed","password":"258"}
+    ]
+}
+
+
+

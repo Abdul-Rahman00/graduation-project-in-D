@@ -1,0 +1,46 @@
+<h2 class="mt-5"> Create your order</h2>
+<div class="mb-3">
+    <div class="mb-3">
+        <label for="cat" class="form-label">Select Category :</label>
+        <select class="form-select form-select-lg" name="prdcat" id="cat" [(ngModel)]="selectedCategory">
+            <option value="0">All Product</option>
+            <option *ngFor="let item of  catogry" value="{{item.id}}">{{item.name}}</option>
+        </select>
+    </div>
+</div>
+<hr>
+<!-- (OrderTotalPriceChange)="totalPriceChange($event)" -->
+<app-product-list [sendCategoryID]="selectedCategory" (cartBought)="sendCartShopping($event)"></app-product-list>
+<hr>
+<h2 class="mt-5">Cart Shopping</h2>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity Needed</th>
+        <th scope="col">Price item</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of cart ; let i=index">
+        <th scope="row"> {{i+1}} </th>
+        <td>{{item.name}}</td>
+        <td>{{item.price}}</td>
+        <td><input type="number" class="form-control" value="{{item.neededCount}}" min="1" [max]="item.avaliableQuantity"></td>
+        <td>{{priceOFprd}}</td>
+        <td>
+            <button type="button" class="btn btn-secondary" (click)="removePrd(item.name)">
+              Remove
+            </button>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+<hr> 
+<h3>Total Price :</h3>
+
+
+
+

@@ -1,0 +1,42 @@
+/*******************************************/
+
+.head
+{
+    color: darkslategrey;
+    font-family: cursive;
+    font-weight: bold;
+}
+.pricee {color: #659A97;font-size: 2vw;}
+.pricee i
+{
+    
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg); 
+    transform: rotate(90deg);
+}
+.category, .available{color: darkgray;}
+.available span, .category span{color: darkslategrey}
+.quantity{color: darkgrey;font-family: sans-serif}
+.quantity-amount{background-color: gainsboro; border: none ;width: 10%;}
+.icon {border: none;}
+.btnCard
+{
+    color: darkslategrey;
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+.btnCard:hover
+{
+    -ms-transform:translateY(-10px) scale(1.02); /* IE 9 */
+    -webkit-transform: translateY(-10px) scale(1.02); /* Safari 3-8 */
+    transform: translateY(-10px) scale(1.02);
+    
+    box-shadow: 10px 10px 5px #aaaaaa;
+}
+.options
+{
+    position: absolute;
+    top: 80%;
+    right: 20%;
+}
+/**************End*********************************/
