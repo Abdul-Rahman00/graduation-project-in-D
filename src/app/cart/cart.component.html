@@ -1,0 +1,66 @@
+<h1>cart</h1>
+
+<table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price EGP</th>
+        <th scope="col">Price USD</th>
+        <th scope="col">Img</th>
+        <th scope="col">Quantity Available</th>
+        <th scope="col">Quantity Needed</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <!-- [class.d-none] = "item.quantity==0" -->
+    <!-- [hidden]="item.quantity==0" -->
+    <!-- [style.backgroud-color]="(item.id ==1)? 'red' : 'white'"  -->
+    <tbody>
+      <!--<ng-container *ngIf="item.catID == selectedCategory">   -->
+        <tr  *ngFor="let item of items ; let i=index"  [ngClass]="{'bg-danger':item.quantity==0,'text-primary':item.quantity==1}">
+          <th scope="row">{{i+1}}</th>
+          <td>
+            <span ChangeStyle >{{item.prdName}}</span>
+          </td>
+          <td>{{item.price  | eGPtoUSD | currency : "EGP" : 'symbol'}}</td>
+          <td>{{item.price | currency :"USD":'symbol'}}</td>
+          <td><img [src]="item.imgURL" height="150px"></td>
+          <td>
+            <!--
+            <div *ngIf="item.quantity!=0 else outStock">
+              <span>{{item.quantity}}</span>
+            </div>
+            <ng-template #outStock>Out of Stock</ng-template> 
+            -->
+            <ng-container [ngSwitch]="item.quantity">
+              <div *ngSwitchCase="0">Out of Stock</div>
+              <div *ngSwitchCase="1">Last one item</div>
+              <div *ngSwitchCase="2">Last two item</div>
+              <div *ngSwitchDefault>{{item.quantity}}</div>
+            </ng-container>
+            <!-- <div *ngIf="item.quantity==0">out of stock</div> -->
+          </td>
+          <!-- template Value (#neededQuantity) -->
+          <td>
+            <input type="number" class="form-control" [disabled]="item.quantity==0" #neededQuantity min="1" [max]="item.quantity">
+          </td>  
+          <td>
+            <!-- <button type="button" class="btn btn-secondary" (click)="Details(item.id)">
+              Details
+            </button> -->
+            <a class="btn btn-secondary" routerLink="['/productInfo', item.id]" role="button">Details</a>
+            
+          </td>
+          <td>
+            <!-- (click)="BuyPrd(item.id,neededQuantity.value,item.price)"  -->
+            <button type="button" class="btn btn-secondary" >
+            Add to cart
+            </button>
+  
+          </td>
+        </tr>
+      <!-- </ng-container> -->
+    </tbody>
+  </table>

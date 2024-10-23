@@ -6,6 +6,7 @@ import { MainLayoutComponent } from './main-layout/main-layout.component';
 import { LoginComponent } from './login/login.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { AllProductsComponent } from './all-products/all-products.component';
+import { CartComponent } from './cart/cart.component';
 
 export const routes: Routes = [
     {path:'',component:MainLayoutComponent,children:[
@@ -15,6 +16,7 @@ export const routes: Routes = [
         {path:'productsList',component:ProductListComponent},
         {path:'productInfo/:pid',component:ProductDetailsComponent},    
         {path:'order',component:OrderMasterComponent},
+        {path: 'cart', component:CartComponent}
     ]},
     {path:'login',component:LoginComponent}
 ];
