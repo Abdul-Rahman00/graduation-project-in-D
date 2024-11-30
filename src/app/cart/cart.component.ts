@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CartService } from './cart.service';
 import { CommonModule } from '@angular/common';
 import {EGPtoUSDPipe} from '../Pipe/egpto-usd.pipe';
-
+import { CartShopping } from '../ViewModels/cart-shopping';
 
 
 @Component({
@@ -12,12 +12,16 @@ import {EGPtoUSDPipe} from '../Pipe/egpto-usd.pipe';
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css'
 })
-export class CartComponent {
+export class CartComponent implements OnInit {
 
+  items:CartShopping[]=[];
 
-  constructor(private _cartService: CartService){}
+  constructor(private _cartService: CartService){}   
 
-  items = this._cartService.getItems();
+  ngOnInit(): void {
+    this._cartService.getItems()
+  }
+
   
 }
 

@@ -19,14 +19,14 @@
     <!-- [style.backgroud-color]="(item.id ==1)? 'red' : 'white'"  -->
     <tbody>
       <!--<ng-container *ngIf="item.catID == selectedCategory">   -->
-        <tr  *ngFor="let item of items ; let i=index"  [ngClass]="{'bg-danger':item.quantity==0,'text-primary':item.quantity==1}">
+        <tr  *ngFor="let item of items ; let i=index"  [ngClass]="{'bg-danger':item.avaliableQuantity==0,
+        'text-primary':item.avaliableQuantity==1}">
           <th scope="row">{{i+1}}</th>
           <td>
-            <span ChangeStyle >{{item.prdName}}</span>
+            <span ChangeStyle >{{item.name}}</span>
           </td>
           <td>{{item.price  | eGPtoUSD | currency : "EGP" : 'symbol'}}</td>
           <td>{{item.price | currency :"USD":'symbol'}}</td>
-          <td><img [src]="item.imgURL" height="150px"></td>
           <td>
             <!--
             <div *ngIf="item.quantity!=0 else outStock">
@@ -34,17 +34,17 @@
             </div>
             <ng-template #outStock>Out of Stock</ng-template> 
             -->
-            <ng-container [ngSwitch]="item.quantity">
+            <ng-container [ngSwitch]="item.avaliableQuantity">
               <div *ngSwitchCase="0">Out of Stock</div>
               <div *ngSwitchCase="1">Last one item</div>
               <div *ngSwitchCase="2">Last two item</div>
-              <div *ngSwitchDefault>{{item.quantity}}</div>
+              <div *ngSwitchDefault>{{item.avaliableQuantity}}</div>
             </ng-container>
             <!-- <div *ngIf="item.quantity==0">out of stock</div> -->
           </td>
           <!-- template Value (#neededQuantity) -->
           <td>
-            <input type="number" class="form-control" [disabled]="item.quantity==0" #neededQuantity min="1" [max]="item.quantity">
+            <input type="number" class="form-control" [disabled]="item.avaliableQuantity==0" #neededQuantity min="1" [max]="item.avaliableQuantity">
           </td>  
           <td>
             <!-- <button type="button" class="btn btn-secondary" (click)="Details(item.id)">

@@ -26,7 +26,7 @@
                 data-bs-target="#exampleModal">Show details</button> -->
                 <a class="btn bg-light-green" role="button" [routerLink]="['/productInfo',item.id]">Show details</a>
                 <button class="btn bg-light-green mt-2"
-                [disabled]="item.quantity==0">Add To Cart <i class="fa-solid fa-cart-shopping"></i></button>
+                [disabled]="item.quantity==0" (click)="addToCart(product)">Add To Cart <i class="fa-solid fa-cart-shopping"></i></button>
             </div>
         </div>
     </div>

@@ -15,9 +15,20 @@ import { CartService } from '../cart/cart.service';
 })
 export class AllProductsComponent implements OnInit{
 
+  
   filterPrd:IProduct[]=[];
-  constructor(private _ApiProductService:ApiProductService){
+  product!: IProduct;
+  constructor(
+    private _ApiProductService:ApiProductService,
+    private _cartService: CartService
+
+  ){
   }
+
+  addToCart(product:IProduct){
+
+    this._cartService.addToCart(product)};
+
   ngOnInit(): void {
     
     this._ApiProductService.getAllProducts().subscribe({
